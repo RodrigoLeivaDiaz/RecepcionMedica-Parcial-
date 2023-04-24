@@ -18,6 +18,8 @@ namespace RecepcionMedica.Data
 
         public DbSet<RecepcionMedica.Models.Especialidad> Especialidad { get; set; } = default!;
 
+        public DbSet<RecepcionMedica.Models.Paciente> Paciente { get; set; } = default!;
+
         
     }
 }
