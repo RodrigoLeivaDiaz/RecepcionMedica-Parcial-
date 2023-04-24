@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using RecepcionMedica.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MvcMedicoContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("MvcMedicoContext") ?? throw new InvalidOperationException("Connection string 'MvcMedicoContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
