@@ -15,5 +15,5 @@ namespace RecepcionMedica.Models;
         public int telefono { get; set; }
 
         public int MedicoId { get; set; } // Required foreign key property
-        public Medico Medico { get; set; } = null!; // Required reference navigation to principal
+        public Medico? Medico { get; set; } // Required reference navigation to principal
     }

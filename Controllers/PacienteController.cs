@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RecepcionMedica.Data;
 using RecepcionMedica.Models;
 
-namespace RecepcionMedica.Controllers
+namespace recepcionMedica.Controllers
 {
     public class PacienteController : Controller
     {
@@ -22,9 +22,8 @@ namespace RecepcionMedica.Controllers
         // GET: Paciente
         public async Task<IActionResult> Index()
         {
-              return _context.Paciente != null ? 
-                          View(await _context.Paciente.ToListAsync()) :
-                          Problem("Entity set 'MvcMedicoContext.Paciente'  is null.");
+            var mvcMedicoContext = _context.Paciente.Include(p => p.Medico);
+            return View(await mvcMedicoContext.ToListAsync());
         }
 
         // GET: Paciente/Details/5
@@ -36,6 +35,7 @@ namespace RecepcionMedica.Controllers
             }
 
             var paciente = await _context.Paciente
+                .Include(p => p.Medico)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (paciente == null)
             {
@@ -48,6 +48,7 @@ namespace RecepcionMedica.Controllers
         // GET: Paciente/Create
         public IActionResult Create()
         {
+            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id");
             return View();
         }
 
@@ -56,7 +57,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono")] Paciente paciente)
+        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono,MedicoId")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +65,7 @@ namespace RecepcionMedica.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id", paciente.MedicoId);
             return View(paciente);
         }
 
@@ -80,6 +82,7 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id", paciente.MedicoId);
             return View(paciente);
         }
 
@@ -88,7 +91,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono")] Paciente paciente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono,MedicoId")] Paciente paciente)
         {
             if (id != paciente.Id)
             {
@@ -115,6 +118,7 @@ namespace RecepcionMedica.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id", paciente.MedicoId);
             return View(paciente);
         }
 
@@ -127,6 +131,7 @@ namespace RecepcionMedica.Controllers
             }
 
             var paciente = await _context.Paciente
+                .Include(p => p.Medico)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (paciente == null)
             {
