@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dyEa2Oj/DAs1ISkJneRAnmvWmZfPkvn+G2cN2gOGja+G2oB5bKiRy8EdkEKO9VRKwN1EABZnwBJJwXEysrYKUg==",
+  "dgSpecHash": "084te0PlSpExIiOYMgAD69J63Jg4pdzYrXLqWmw8l68rwyTzad8kDFiU4rtAxczjmS/H0p0bsYt4dGKSGSPUgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\RecepcionMedica\\RecepcionMedica.csproj",
+  "projectFilePath": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\recepcionMedica\\RecepcionMedica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Puma\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Puma\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",

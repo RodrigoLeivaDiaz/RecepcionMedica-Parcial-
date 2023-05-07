@@ -9,97 +9,97 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RecepcionMedica
 build_property.RootNamespace = RecepcionMedica
-build_property.ProjectDir = C:\Users\Puma\Desktop\Materias 2022\Materias 2023\HerramientasDeProgramacion\RecepcionMedica\
+build_property.ProjectDir = c:\Users\Puma\Desktop\Materias 2022\Materias 2023\HerramientasDeProgramacion\recepcionMedica\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Puma\Desktop\Materias 2022\Materias 2023\HerramientasDeProgramacion\RecepcionMedica
+build_property.MSBuildProjectDirectory = c:\Users\Puma\Desktop\Materias 2022\Materias 2023\HerramientasDeProgramacion\recepcionMedica
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Especialidad/Create.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Especialidad/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Especialidad/Delete.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Especialidad/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Especialidad/Details.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Especialidad/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Especialidad/Edit.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Especialidad/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Especialidad/Index.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Especialidad/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpYWxpZGFkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Home/Index.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Home/Privacy.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Medico/Create.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Medico/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Medico/Delete.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Medico/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Medico/Details.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Medico/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Medico/Edit.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Medico/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Medico/Index.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Medico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Paciente/Create.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Paciente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Paciente/Delete.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Paciente/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Paciente/Details.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Paciente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Paciente/Edit.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Paciente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Paciente/Index.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Paciente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Shared/Error.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/_ViewImports.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/_ViewStart.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/RecepcionMedica/Views/Shared/_Layout.cshtml]
+[c:/Users/Puma/Desktop/Materias 2022/Materias 2023/HerramientasDeProgramacion/recepcionMedica/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ndp8gc2rgy
