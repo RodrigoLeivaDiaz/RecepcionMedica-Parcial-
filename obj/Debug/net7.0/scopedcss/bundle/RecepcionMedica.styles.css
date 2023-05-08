@@ -47,3 +47,11 @@ button.accept-policy[b-ndp8gc2rgy] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.authorized-only .nav-link[b-ndp8gc2rgy] {
+  display: none;
+}
+
+.authorized-only .nav-link.text-muted[b-ndp8gc2rgy] {
+  display: inline-block;
+}

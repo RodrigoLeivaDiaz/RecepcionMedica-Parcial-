@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RecepcionMedica.Data;
 using RecepcionMedica.Models;
+using recepcionMedica.ViewModels;
 
 namespace recepcionMedica.Controllers
 {
@@ -20,10 +21,29 @@ namespace recepcionMedica.Controllers
         }
 
         // GET: Paciente
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string NameFilter)
         {
-            var mvcMedicoContext = _context.Paciente.Include(p => p.Medico);
-            return View(await mvcMedicoContext.ToListAsync());
+            try
+            {
+            var query = from Paciente in _context.Paciente select Paciente;
+
+            if (!string.IsNullOrEmpty(NameFilter)) {
+                query = query.Where(x => x.NombreCompleto.Contains(NameFilter));
+            }
+
+            var model =new PacienteViewModel();
+
+            model.Pacientes = await query.ToListAsync();
+
+            return View(model);
+
+            }
+              catch(Exception ex) {
+
+              return View("Error");
+              }
+          {
+        }
         }
 
         // GET: Paciente/Details/5

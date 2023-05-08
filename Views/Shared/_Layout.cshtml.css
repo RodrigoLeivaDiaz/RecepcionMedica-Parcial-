@@ -46,3 +46,11 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.authorized-only .nav-link {
+  display: none;
+}
+
+.authorized-only .nav-link.text-muted {
+  display: inline-block;
+}
