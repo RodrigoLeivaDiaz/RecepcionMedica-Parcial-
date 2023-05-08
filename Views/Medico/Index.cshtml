@@ -1,4 +1,6 @@
-@model IEnumerable<RecepcionMedica.Models.Medico>
+@using recepcionMedica.ViewModels;
+
+@model MedicoViewModel;
 
 @{
     ViewData["Title"] = "Index";
@@ -9,26 +11,36 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<div class="row">
+    <form method="get" asp-action="Index" asp-controller="Medico">
+        <div class="rec form-group">
+            <input class ="form-control" asp-for="NameFilter">
+        </div>
+        <button class="btn" type="submit">Buscar</button>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NombreCompleto)
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().NombreCompleto)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Edad)
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().Edad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Calificacion)
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().Calificacion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Especialidad)
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().Profesión)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Medicos) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreCompleto)
@@ -40,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Calificacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Especialidad.Id)
+                @Html.DisplayFor(modelItem => item.Profesión)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

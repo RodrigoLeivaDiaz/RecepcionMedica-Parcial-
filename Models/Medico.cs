@@ -14,4 +14,6 @@ namespace RecepcionMedica.Models;
         public Especialidad? Especialidad { get; set; } // Required reference navigation to principal
 
         public ICollection<Paciente> Pacientes { get; } = new List<Paciente>();
+
+        public string? Profesión => Especialidad?.NombreEspecialidad;
     }

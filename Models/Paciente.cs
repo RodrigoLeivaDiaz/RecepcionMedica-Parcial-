@@ -16,4 +16,6 @@ namespace RecepcionMedica.Models;
 
         public int MedicoId { get; set; } // Required foreign key property
         public Medico? Medico { get; set; } // Required reference navigation to principal
+
+        public string? MedicoTratante => Medico?.NombreCompleto;
     }

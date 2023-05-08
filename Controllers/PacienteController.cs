@@ -25,7 +25,7 @@ namespace recepcionMedica.Controllers
         {
             try
             {
-            var query = from Paciente in _context.Paciente select Paciente;
+            var query = from Paciente in _context.Paciente.Include(p => p.Medico) select Paciente;
 
             if (!string.IsNullOrEmpty(NameFilter)) {
                 query = query.Where(x => x.NombreCompleto.Contains(NameFilter));

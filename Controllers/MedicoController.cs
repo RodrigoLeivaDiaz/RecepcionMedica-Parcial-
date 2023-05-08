@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RecepcionMedica.Data;
 using RecepcionMedica.Models;
+using recepcionMedica.ViewModels;
 
 namespace RecepcionMedica.Controllers
 {
@@ -20,10 +21,30 @@ namespace RecepcionMedica.Controllers
         }
 
         // GET: Medico
-        public async Task<IActionResult> Index()
+
+        public async Task<IActionResult> Index(string NameFilter)
         {
-            var mvcMedicoContext = _context.Medico.Include(m => m.Especialidad);
-            return View(await mvcMedicoContext.ToListAsync());
+            try
+            {
+            var query = from Medico in _context.Medico.Include(p => p.Especialidad) select Medico;
+
+            if (!string.IsNullOrEmpty(NameFilter)) {
+                query = query.Where(x => x.NombreCompleto.Contains(NameFilter));
+            }
+
+            var model =new MedicoViewModel();
+
+            model.Medicos = await query.ToListAsync();
+
+            return View(model);
+
+            }
+              catch(Exception ex) {
+
+              return View("Error");
+              }
+          {
+        }
         }
 
         // GET: Medico/Details/5
@@ -41,8 +62,18 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+            var query = from Paciente in _context.Paciente.Include(p => p.Medico) where Paciente.MedicoId == id select Paciente;
 
-            return View(medico);
+            var viewModel = new MedicosViewModel();
+
+            viewModel.NombreCompleto = medico.NombreCompleto;
+            viewModel.Edad = medico.Edad;
+            viewModel.Calificacion = medico.Calificacion;
+            viewModel.Profesion = medico.Profesión;
+            viewModel.Pacientes = await query.ToListAsync();
+            viewModel.Id = medico.Id;
+
+            return View(viewModel);
         }
 
         // GET: Medico/Create

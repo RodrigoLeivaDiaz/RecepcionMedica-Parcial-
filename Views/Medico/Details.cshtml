@@ -1,4 +1,6 @@
-@model RecepcionMedica.Models.Medico
+@using recepcionMedica.ViewModels;
+
+@model MedicosViewModel;
 
 @{
     ViewData["Title"] = "Details";
@@ -29,12 +31,20 @@
             @Html.DisplayFor(model => model.Calificacion)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Especialidad)
+            @Html.DisplayNameFor(model => model.Profesion)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Especialidad.Id)
+            @Html.DisplayFor(model => model.Profesion)
         </dd>
     </dl>
+        <div>
+            <ol>
+                @foreach (var item in Model.Pacientes)
+                {
+                    <li>@item.NombreCompleto</li>
+                }
+            </ol>
+        </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |

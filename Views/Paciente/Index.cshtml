@@ -21,7 +21,6 @@
     </form>
 </div>
 
-
 <table class="table">
     <thead>
         <tr>
@@ -41,7 +40,7 @@
                 @Html.DisplayNameFor(model => model.Pacientes.FirstOrDefault().telefono)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pacientes.FirstOrDefault().MedicoId)
+                @Html.DisplayNameFor(model => model.Pacientes.FirstOrDefault().MedicoTratante)
             </th>
             <th></th>
         </tr>
@@ -65,7 +64,7 @@
                 @Html.DisplayFor(modelItem => item.telefono)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Medico.Id)
+                @Html.DisplayFor(modelItem => item.MedicoTratante)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
