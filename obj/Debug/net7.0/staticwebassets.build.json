@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/yyO8roYqq+cNkl3H8abGqBnHq0fwt3CT4eED9dEYc0=",
+  "Hash": "qJDdMdVoVkGC3zA3qUrH8dUmoACv89YigNVVLGZkOTs=",
   "Source": "RecepcionMedica",
   "BasePath": "_content/RecepcionMedica",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\recepcionMedica\\wwwroot\\images\\fondo.png",
+      "SourceId": "RecepcionMedica",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\recepcionMedica\\wwwroot\\",
+      "BasePath": "_content/RecepcionMedica",
+      "RelativePath": "images/fondo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fondo.png"
     },
     {
       "Identity": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\recepcionMedica\\wwwroot\\js\\site.js",

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\recepcionMedica\\wwwroot\\images\\fondo.png",
+      "PackagePath": "staticwebassets\\images\\fondo.png"
+    },
+    {
       "Id": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\recepcionMedica\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
