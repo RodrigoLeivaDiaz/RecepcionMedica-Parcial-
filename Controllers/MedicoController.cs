@@ -118,7 +118,7 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
-            ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id", medico.EspecialidadId);
+            ViewData["Profesión"] = new SelectList(_context.Especialidad, "Id", "NombreEspecialidad");
             return View(medico);
         }
 

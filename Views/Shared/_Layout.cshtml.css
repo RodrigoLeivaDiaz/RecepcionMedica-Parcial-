@@ -55,4 +55,10 @@ button.accept-policy {
   display: inline-block;
 }
 
+.btn-green {
+  background-color: #7FFF00;
+  color: white;
+}
+
+
 

@@ -5,11 +5,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
 
-<h1>Index</h1>
+<h1 style="text-align:center; font-family: 'Lobster', cursive; font-size: 32px; font-weight: bold; color: #1A5276;">Índice de Pacientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Dar de alta Nuevo Paciente</a>
 </p>
 
 <div class="row">
@@ -17,7 +20,7 @@
         <div class="rec form-group">
             <input class ="form-control" asp-for="NameFilter">
         </div>
-        <button class="btn" type="submit">Buscar</button>
+        <button class="btn btn-secondary" type="submit">Buscar</button>
     </form>
 </div>
 
@@ -67,9 +70,9 @@
                 @Html.DisplayFor(modelItem => item.MedicoTratante)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }

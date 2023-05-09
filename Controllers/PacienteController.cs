@@ -31,8 +31,8 @@ namespace recepcionMedica.Controllers
                 query = query.Where(x => x.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
                 x.Medico.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
                 x.Edad.ToString() == NameFilter ||
-                x.ObraSocial.ToLower().Contains(NameFilter.ToLower()) ||
-                x.Sexo.ToString() == NameFilter);
+                x.ObraSocial.ToLower().Contains(NameFilter.ToLower()));
+                //x.Sexo.ToString() == NameFilter);
             }
 
             var model =new PacienteViewModel();
