@@ -28,7 +28,11 @@ namespace recepcionMedica.Controllers
             var query = from Paciente in _context.Paciente.Include(p => p.Medico) select Paciente;
 
             if (!string.IsNullOrEmpty(NameFilter)) {
-                query = query.Where(x => x.NombreCompleto.Contains(NameFilter));
+                query = query.Where(x => x.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Medico.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Edad.ToString() == NameFilter ||
+                x.ObraSocial.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Sexo.ToString() == NameFilter);
             }
 
             var model =new PacienteViewModel();
@@ -68,7 +72,7 @@ namespace recepcionMedica.Controllers
         // GET: Paciente/Create
         public IActionResult Create()
         {
-            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id");
+            ViewData["Medico"] = new SelectList(_context.Medico, "Id", "NombreCompleto");
             return View();
         }
 

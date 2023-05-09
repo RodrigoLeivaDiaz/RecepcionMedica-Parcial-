@@ -6,7 +6,7 @@ namespace RecepcionMedica.Models;
     
         public string? NombreCompleto { get; set; }
 
-        public string? Sexo { get; set; }
+        public SexoEnum Sexo { get; set; }
 
         public string? ObraSocial { get; set; }
 

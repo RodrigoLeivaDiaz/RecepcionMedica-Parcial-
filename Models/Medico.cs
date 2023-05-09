@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace RecepcionMedica.Models;
 
     public class Medico
@@ -10,7 +12,9 @@ namespace RecepcionMedica.Models;
 
         public int Calificacion { get; set; }
 
-        public int EspecialidadId { get; set; } // Required foreign key property
+
+          public int EspecialidadId { get; set; } // Required foreign key property
+          [Display(Name = "Especialidad")]
         public Especialidad? Especialidad { get; set; } // Required reference navigation to principal
 
         public ICollection<Paciente> Pacientes { get; } = new List<Paciente>();

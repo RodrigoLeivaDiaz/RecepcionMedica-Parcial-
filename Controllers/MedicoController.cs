@@ -29,7 +29,10 @@ namespace RecepcionMedica.Controllers
             var query = from Medico in _context.Medico.Include(p => p.Especialidad) select Medico;
 
             if (!string.IsNullOrEmpty(NameFilter)) {
-                query = query.Where(x => x.NombreCompleto.Contains(NameFilter));
+                query = query.Where(x => x.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Especialidad.NombreEspecialidad.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Edad.ToString() == NameFilter ||
+                x.Calificacion.ToString() == NameFilter);
             }
 
             var model =new MedicoViewModel();
@@ -79,7 +82,9 @@ namespace RecepcionMedica.Controllers
         // GET: Medico/Create
         public IActionResult Create()
         {
-            ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id");
+            //ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id");
+            ViewData["Profesión"] = new SelectList(_context.Especialidad, "Id", "NombreEspecialidad");
+
             return View();
         }
 
@@ -88,7 +93,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Edad,Calificacion,EspecialidadId")] Medico medico)
+        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Edad,Calificacion,EspecialidadId,Profesión")] Medico medico)
         {
             if (ModelState.IsValid)
             {
