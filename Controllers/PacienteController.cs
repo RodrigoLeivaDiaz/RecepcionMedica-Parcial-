@@ -106,7 +106,7 @@ namespace recepcionMedica.Controllers
             {
                 return NotFound();
             }
-            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id", paciente.MedicoId);
+            ViewData["Medico"] = new SelectList(_context.Set<Medico>(), "Id", "NombreCompleto", paciente.MedicoTratante);
             return View(paciente);
         }
 

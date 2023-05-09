@@ -173,7 +173,7 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(medico);
         }
 
