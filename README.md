@@ -1,5 +1,5 @@
 <p align="center">
-![recepcion](https://github.com/RodrigoLeivaDiaz/RecepcionMedica-Parcial-/assets/107962231/25a3b924-e4e7-4671-a81b-c7ff56a90c11)
+<img src="https://github.com/RodrigoLeivaDiaz/RecepcionMedica-Parcial-/assets/107962231/25a3b924-e4e7-4671-a81b-c7ff56a90c11" #vitrinedev/>
 </p>
 
 <hr>
