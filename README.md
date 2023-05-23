@@ -58,6 +58,41 @@
    </details>
    <hr>
    
+   ## Preguntas Frecuentes  ❓
+
+
+<details>
+    <summary>Click Aquí para Detalle ↩️</summary>
+    <br>
+   <p>Preguntas Frecuentes:</p>
+<ol>
+  <li>
+    <p><strong>Pregunta:</strong> ¿Cuál es el propósito de este sistema?</p>
+    <p><strong>Respuesta:</strong> El propósito de este sistema es facilitar la administración de pacientes, médicos y especialidades en una clínica u hospital, permitiendo realizar operaciones de alta, baja y modificación de registros, así como también visualizar y buscar información relacionada.</p>
+  </li>
+  <li>
+    <p><strong>Pregunta:</strong> ¿Cuándo estará disponible la funcionalidad de agendar citas?</p>
+    <p><strong>Respuesta:</strong> Actualmente, la funcionalidad de agendar citas está en desarrollo y se espera que esté disponible en futuras actualizaciones del proyecto. Mantente atento a las nuevas versiones.</p>
+  </li>
+</ol>
+
+
+   </details>
+   <hr>
+   
+   ## Derechos de Autor y Licencias  📖🖍️
+
+
+<details>
+    <summary>Click Aquí para Detalle ↩️</summary>
+    <br>
+   <p>Tecnologías Utilizadas:</p>
+<ul>
+  <li>Este proyecto está bajo la siguiente licencia: Licencia Libre. Para obtener más información sobre los derechos de autor y las licencias asociadas a este proyecto, consulta el archivo ==> licencia.txt incluido en el repositorio.</a></li>
+</ul>
+
+   </details>
+   <hr>
 
 
 
