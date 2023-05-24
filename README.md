@@ -1,6 +1,7 @@
 <p align="center">
-<img src="https://github.com/RodrigoLeivaDiaz/RecepcionMedica-Parcial-/assets/107962231/25a3b924-e4e7-4671-a81b-c7ff56a90c11" #vitrinedev/>
+<img src="https://github.com/RodrigoLeivaDiaz/RecepcionMedica-Parcial-/assets/107962231/07756047-8f25-4d08-afa6-f271842dfd8f" #vitrinedev/>
 </p>
+
 
 <hr>
 
