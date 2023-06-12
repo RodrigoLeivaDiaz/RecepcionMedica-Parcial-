@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\RecepcionMedica\\RecepcionMedica.csproj": {}
+    "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\recepcionMedica\\RecepcionMedica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\RecepcionMedica\\RecepcionMedica.csproj": {
+    "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\recepcionMedica\\RecepcionMedica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\RecepcionMedica\\RecepcionMedica.csproj",
+        "projectUniqueName": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\recepcionMedica\\RecepcionMedica.csproj",
         "projectName": "RecepcionMedica",
-        "projectPath": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\RecepcionMedica\\RecepcionMedica.csproj",
+        "projectPath": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\recepcionMedica\\RecepcionMedica.csproj",
         "packagesPath": "C:\\Users\\Puma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\HerramientasDeProgramacion\\RecepcionMedica\\obj\\",
+        "outputPath": "C:\\Users\\Puma\\Desktop\\Materias 2022\\Materias 2023\\recepcionMedica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Puma\\AppData\\Roaming\\NuGet\\NuGet.Config",

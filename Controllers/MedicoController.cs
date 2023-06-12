@@ -22,9 +22,8 @@ namespace RecepcionMedica.Controllers
         // GET: Medico
         public async Task<IActionResult> Index()
         {
-              return _context.Medico != null ? 
-                          View(await _context.Medico.ToListAsync()) :
-                          Problem("Entity set 'MvcMedicoContext.Medico'  is null.");
+            var mvcMedicoContext = _context.Medico.Include(m => m.Especialidad);
+            return View(await mvcMedicoContext.ToListAsync());
         }
 
         // GET: Medico/Details/5
@@ -36,6 +35,7 @@ namespace RecepcionMedica.Controllers
             }
 
             var medico = await _context.Medico
+                .Include(m => m.Especialidad)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (medico == null)
             {
@@ -48,6 +48,7 @@ namespace RecepcionMedica.Controllers
         // GET: Medico/Create
         public IActionResult Create()
         {
+            ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id");
             return View();
         }
 
@@ -56,7 +57,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Especialidad,Edad,Calificacion")] Medico medico)
+        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Edad,Calificacion,EspecialidadId")] Medico medico)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +65,7 @@ namespace RecepcionMedica.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id", medico.EspecialidadId);
             return View(medico);
         }
 
@@ -80,6 +82,7 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+            ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id", medico.EspecialidadId);
             return View(medico);
         }
 
@@ -88,7 +91,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreCompleto,Especialidad,Edad,Calificacion")] Medico medico)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreCompleto,Edad,Calificacion,EspecialidadId")] Medico medico)
         {
             if (id != medico.Id)
             {
@@ -115,6 +118,7 @@ namespace RecepcionMedica.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id", medico.EspecialidadId);
             return View(medico);
         }
 
@@ -127,6 +131,7 @@ namespace RecepcionMedica.Controllers
             }
 
             var medico = await _context.Medico
+                .Include(m => m.Especialidad)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (medico == null)
             {

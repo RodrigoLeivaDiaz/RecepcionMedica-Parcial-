@@ -19,7 +19,18 @@ namespace RecepcionMedica.Data
         public DbSet<RecepcionMedica.Models.Especialidad> Especialidad { get; set; } = default!;
 
         public DbSet<RecepcionMedica.Models.Paciente> Paciente { get; set; } = default!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
-        
+        modelBuilder.Entity<Especialidad>()
+        .HasMany(f => f.Medicos)
+        .WithOne(f => f.Especialidad )
+        .HasForeignKey(f => f.EspecialidadId);
+
+        modelBuilder.Entity<Medico>()
+        .HasMany(e => e.Pacientes)
+        .WithOne(e => e.Medico)
+        .HasForeignKey(e => e.MedicoId);
+        }          
     }
 }
