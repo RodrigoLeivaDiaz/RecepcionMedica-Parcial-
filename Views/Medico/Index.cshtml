@@ -1,25 +1,53 @@
-@model IEnumerable<RecepcionMedica.Models.Medico>
+@using recepcionMedica.ViewModels;
+
+@model MedicoViewModel;
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    body {
+        background-color: #E0FFFF;
+    }
+</style>
+</head>
+
+<h1 style="text-align:center; font-family: 'Lobster', cursive; font-size: 32px; font-weight: bold;color: #1A5276;">Índice de Médicos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Dar de alta Nuevo Médico</a>
 </p>
+
+<div class="row">
+    <form method="get" asp-action="Index" asp-controller="Medico">
+        <div class="rec form-group">
+            <input class ="form-control" asp-for="NameFilter">
+        </div>
+        <button class="btn btn-secondary" type="submit">Buscar</button>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NombreCompleto)
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().NombreCompleto)
             </th>
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Edad)
+=======
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().Edad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Calificacion)
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().Calificacion)
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicos.FirstOrDefault().Profesión)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Especialidad)
@@ -28,7 +56,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Medicos) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreCompleto)
@@ -40,12 +68,21 @@
                 @Html.DisplayFor(modelItem => item.Calificacion)
             </td>
             <td>
+<<<<<<< HEAD
                 @Html.DisplayFor(modelItem => item.Especialidad.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+=======
+                @Html.DisplayFor(modelItem => item.Profesión)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
             </td>
         </tr>
 }

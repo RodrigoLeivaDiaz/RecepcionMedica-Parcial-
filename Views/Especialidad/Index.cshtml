@@ -4,10 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    body {
+        background-color: #E0FFFF;
+    }
+</style>
+</head>
+
+<h1 style="text-align:center; font-family: 'Lobster', cursive; font-size: 32px; font-weight: bold;color: #1A5276;">Índice de Especialidades</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Dar de alta Nueva Especialidad</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +34,9 @@
                 @Html.DisplayFor(modelItem => item.NombreEspecialidad)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }

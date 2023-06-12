@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RecepcionMedica.Data;
 using RecepcionMedica.Models;
+using recepcionMedica.ViewModels;
 
 namespace RecepcionMedica.Controllers
 {
@@ -28,9 +29,10 @@ namespace RecepcionMedica.Controllers
         }
 
         // GET: Especialidad/Details/5
+
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Especialidad == null)
+             if (id == null || _context.Especialidad == null)
             {
                 return NotFound();
             }
@@ -41,8 +43,15 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+            var query = from Medico in _context.Medico where Medico.EspecialidadId == id select Medico;
 
-            return View(especialidad);
+            var viewModel = new EspecialidadesViewModel();
+
+            viewModel.Especialidad = especialidad.NombreEspecialidad;          
+            viewModel.Medicos = await query.ToListAsync();
+            viewModel.Id = especialidad.Id;
+
+            return View(viewModel);
         }
 
         // GET: Especialidad/Create

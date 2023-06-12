@@ -28,9 +28,15 @@ namespace RecepcionMedica.Data
         .HasForeignKey(f => f.EspecialidadId);
 
         modelBuilder.Entity<Medico>()
+<<<<<<< HEAD
         .HasMany(e => e.Pacientes)
         .WithOne(e => e.Medico)
         .HasForeignKey(e => e.MedicoId);
+=======
+        .HasMany(f => f.Pacientes)
+        .WithOne(f => f.Medico)
+        .HasForeignKey(f => f.MedicoId);
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
         }          
     }
 }

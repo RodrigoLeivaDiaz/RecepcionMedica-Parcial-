@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RecepcionMedica.Data;
 using RecepcionMedica.Models;
+using recepcionMedica.ViewModels;
 
 namespace RecepcionMedica.Controllers
 {
@@ -20,10 +21,38 @@ namespace RecepcionMedica.Controllers
         }
 
         // GET: Medico
-        public async Task<IActionResult> Index()
+
+        public async Task<IActionResult> Index(string NameFilter)
         {
+<<<<<<< HEAD
             var mvcMedicoContext = _context.Medico.Include(m => m.Especialidad);
             return View(await mvcMedicoContext.ToListAsync());
+=======
+            try
+            {
+            var query = from Medico in _context.Medico.Include(p => p.Especialidad) select Medico;
+
+            if (!string.IsNullOrEmpty(NameFilter)) {
+                query = query.Where(x => x.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Especialidad.NombreEspecialidad.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Edad.ToString() == NameFilter ||
+                x.Calificacion.ToString() == NameFilter);
+            }
+
+            var model =new MedicoViewModel();
+
+            model.Medicos = await query.ToListAsync();
+
+            return View(model);
+
+            }
+              catch(Exception ex) {
+
+              return View("Error");
+              }
+          {
+        }
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
         }
 
         // GET: Medico/Details/5
@@ -41,14 +70,30 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+            var query = from Paciente in _context.Paciente.Include(p => p.Medico) where Paciente.MedicoId == id select Paciente;
 
-            return View(medico);
+            var viewModel = new MedicosViewModel();
+
+            viewModel.NombreCompleto = medico.NombreCompleto;
+            viewModel.Edad = medico.Edad;
+            viewModel.Calificacion = medico.Calificacion;
+            viewModel.Profesion = medico.Profesión;
+            viewModel.Pacientes = await query.ToListAsync();
+            viewModel.Id = medico.Id;
+
+            return View(viewModel);
         }
 
         // GET: Medico/Create
         public IActionResult Create()
         {
+<<<<<<< HEAD
             ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id");
+=======
+            //ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id");
+            ViewData["Profesión"] = new SelectList(_context.Especialidad, "Id", "NombreEspecialidad");
+
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
             return View();
         }
 
@@ -57,7 +102,11 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Edad,Calificacion,EspecialidadId")] Medico medico)
+=======
+        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Edad,Calificacion,EspecialidadId,Profesión")] Medico medico)
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +131,11 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+<<<<<<< HEAD
             ViewData["EspecialidadId"] = new SelectList(_context.Especialidad, "Id", "Id", medico.EspecialidadId);
+=======
+            ViewData["Profesión"] = new SelectList(_context.Especialidad, "Id", "NombreEspecialidad");
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
             return View(medico);
         }
 
@@ -137,7 +190,7 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(medico);
         }
 

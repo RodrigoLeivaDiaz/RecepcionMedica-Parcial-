@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RecepcionMedica.Data;
 using RecepcionMedica.Models;
+using recepcionMedica.ViewModels;
 
-namespace RecepcionMedica.Controllers
+namespace recepcionMedica.Controllers
 {
     public class PacienteController : Controller
     {
@@ -20,11 +21,33 @@ namespace RecepcionMedica.Controllers
         }
 
         // GET: Paciente
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string NameFilter)
         {
-              return _context.Paciente != null ? 
-                          View(await _context.Paciente.ToListAsync()) :
-                          Problem("Entity set 'MvcMedicoContext.Paciente'  is null.");
+            try
+            {
+            var query = from Paciente in _context.Paciente.Include(p => p.Medico) select Paciente;
+
+            if (!string.IsNullOrEmpty(NameFilter)) {
+                query = query.Where(x => x.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Medico.NombreCompleto.ToLower().Contains(NameFilter.ToLower()) ||
+                x.Edad.ToString() == NameFilter ||
+                x.ObraSocial.ToLower().Contains(NameFilter.ToLower()));
+                //x.Sexo.ToString() == NameFilter);
+            }
+
+            var model =new PacienteViewModel();
+
+            model.Pacientes = await query.ToListAsync();
+
+            return View(model);
+
+            }
+              catch(Exception ex) {
+
+              return View("Error");
+              }
+          {
+        }
         }
 
         // GET: Paciente/Details/5
@@ -36,6 +59,7 @@ namespace RecepcionMedica.Controllers
             }
 
             var paciente = await _context.Paciente
+                .Include(p => p.Medico)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (paciente == null)
             {
@@ -48,6 +72,7 @@ namespace RecepcionMedica.Controllers
         // GET: Paciente/Create
         public IActionResult Create()
         {
+            ViewData["Medico"] = new SelectList(_context.Medico, "Id", "NombreCompleto");
             return View();
         }
 
@@ -56,7 +81,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono")] Paciente paciente)
+        public async Task<IActionResult> Create([Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono,MedicoId")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +89,7 @@ namespace RecepcionMedica.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id", paciente.MedicoId);
             return View(paciente);
         }
 
@@ -80,6 +106,7 @@ namespace RecepcionMedica.Controllers
             {
                 return NotFound();
             }
+            ViewData["Medico"] = new SelectList(_context.Set<Medico>(), "Id", "NombreCompleto", paciente.MedicoTratante);
             return View(paciente);
         }
 
@@ -88,7 +115,7 @@ namespace RecepcionMedica.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono")] Paciente paciente)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NombreCompleto,Sexo,ObraSocial,Edad,telefono,MedicoId")] Paciente paciente)
         {
             if (id != paciente.Id)
             {
@@ -115,6 +142,7 @@ namespace RecepcionMedica.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MedicoId"] = new SelectList(_context.Set<Medico>(), "Id", "Id", paciente.MedicoId);
             return View(paciente);
         }
 
@@ -127,6 +155,7 @@ namespace RecepcionMedica.Controllers
             }
 
             var paciente = await _context.Paciente
+                .Include(p => p.Medico)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (paciente == null)
             {

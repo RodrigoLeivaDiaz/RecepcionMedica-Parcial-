@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="text-align:center; font-family: 'Lobster', cursive; font-size: 32px; font-weight: bold;color: #1A5276;">Menu de Alta</h1>
 
-<h4>Medico</h4>
+<h4>Nuevo Médico</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -27,19 +27,28 @@
                 <input asp-for="Calificacion" class="form-control" />
                 <span asp-validation-for="Calificacion" class="text-danger"></span>
             </div>
+            <!--<div class="form-group">
+                <label asp-for="EspecialidadId" class="control-label"></label>
+                <select asp-for="EspecialidadId" class ="form-control" asp-items="ViewBag.EspecialidadId"></select>
+            </div> --->
             <div class="form-group">
+                <label asp-for="Profesión" class="control-label"></label>
+                <select asp-for="EspecialidadId" class ="form-control" asp-items="ViewBag.Profesión"></select>
+            </div>
+            <div class="form-group">
+<<<<<<< HEAD
                 <label asp-for="EspecialidadId" class="control-label"></label>
                 <select asp-for="EspecialidadId" class ="form-control" asp-items="ViewBag.EspecialidadId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+=======
+                <input type="submit" value="Dar de Alta" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Volver al Indice</a>
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

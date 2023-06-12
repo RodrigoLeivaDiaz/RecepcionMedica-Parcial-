@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="text-align:center; font-family: 'Lobster', cursive; font-size: 32px; font-weight: bold;color: #1A5276;">Menu de Alta</h1>
 
-<h4>Paciente</h4>
+<h4>Nuevo Paciente</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,8 +19,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Sexo" class="control-label"></label>
-                <input asp-for="Sexo" class="form-control" />
-                <span asp-validation-for="Sexo" class="text-danger"></span>
+                <select asp-for="Sexo" class="form-control">
+                    <option value="0">Femenino</option>
+                    <option value="1">Masculino</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="ObraSocial" class="control-label"></label>
@@ -38,20 +40,24 @@
                 <span asp-validation-for="telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                 <label asp-for="MedicoId" class="control-label"></label>
                 <select asp-for="MedicoId" class ="form-control" asp-items="ViewBag.MedicoId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+=======
+                <label asp-for="Medico" class="control-label"></label>
+                <select asp-for="MedicoId" class ="form-control" asp-items="ViewBag.Medico"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dar de Alta" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Volver al Indice</a>
+>>>>>>> 5d9bbaa6d9f93df87766794fe5648c83a0e1a581
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
